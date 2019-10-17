@@ -1,3 +1,5 @@
+SSH Testing with Host Client and Remote Docker Client & SSH Management Server.
+
 Inputs:- 
 Enter Environment UUID & Id Token & given by CA Authentication
 
@@ -22,7 +24,7 @@ sudo echo "{signed_certificate}" > ~/.ssh/id_rsa-cert.pub
 
 
 Step 5:
-# Build and run the docker image
+Build and run the docker image
 sudo docker build --rm -f "Dockerfile" -t ssh-ca-cert:latest .
 sudo docker stop ssh-ca-cert-run-1
 sudo docker run --rm -d -p 2201:22/tcp --name ssh-ca-cert-run-1 ssh-ca-cert:latest
@@ -30,5 +32,5 @@ sudo docker ps
 
 
 Step 6:
-# Try to ssh 
+Try to ssh 
 ssh -v root@127.0.0.1 -p 2201
